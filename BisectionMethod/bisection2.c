@@ -11,7 +11,7 @@ double f(double x) {
 int main() {
     double x1, x2, mid, fmid;
     double tolerance;
-    int n = 1;
+    int n = 1,max_iter = 1000;
 
     // Input lower and upper bounds
     printf("Enter lower bound x1: ");
@@ -32,7 +32,7 @@ int main() {
     printf("\nIteration\tx1\t\tx2\t\tmid\t\tf(mid)\n");
     printf("----------------------------------------------------------------------\n");
 
-    while ((x2 - x1) >= tolerance) {
+    while ((x2 - x1) >= tolerance && n <= max_iter) {
         mid = (x1 + x2) / 2.0;
         fmid = f(mid);
 
